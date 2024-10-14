@@ -4,6 +4,11 @@ host: 'dpg-croe0tq3esus73c0cgig-a',
 dialect: 'postgres',
 });
 
+// const sequelize = new Sequelize('apinodedb', 'postgres', '12345678', {
+//    host: 'localhost',
+//    dialect: 'postgres',
+//    });
+
 //const sequelize = new Sequelize('camera_db', 'postgres', '12345678', {
    // host: 'localhost',
     //dialect: 'postgres',

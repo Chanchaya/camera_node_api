@@ -1,14 +1,19 @@
 const Product = require('../models/product');
-// ฟçงกgชันสำหรับอัปโหลดภาพ
-exports.uploadImage = async (req, res) => {
+// ฟûงกgชันสำหรับเพิ่มข8อมูลสินค8าใหมK
+exports.createProduct = async (req, res) => {
  try {
- const image_data = req.file ? req.file.buffer : null; // รับข8อมูลรูปภาพเปuน buffer
+ // รับข8อมูล proname และ price
+ const { proname, price } = req.body;
+ // รับข8อมูลชื่อไฟลgรูปภาพ
+ const image_file_name = req.file ? req.file.filename : null;
  const product = await Product.create({
- image: image_data,
+ proname: proname,
+ image: image_file_name,
+ price: price
  });
- res.status(200).json({ message: 'Image uploaded successfully', product });
+ res.status(200).json({ message: 'Add new product successfully', product });
  } catch (error) {
- res.status(500).json({ message: 'Failed to upload image', error });
+ res.status(500).json({ message: 'Failed to add new product', error });
  }
 };
 // แสดงข8อมูล products ทั้งหมด

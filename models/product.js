@@ -3,15 +3,23 @@ const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 // สร8าง Model สำหรับ Product
 const Product = sequelize.define('Product', {
-    proID: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-    },       
- image: {
- type: DataTypes.BLOB('long'), // เก็บรูปภาพในฟåลดgนี้
+ proId: {
  allowNull: false,
+ autoIncrement: true,
+ primaryKey: true,
+ type: Sequelize.INTEGER
  },
+ proname: {
+ type: DataTypes.STRING,
+ allowNull: false
+ },
+ image: {
+ type: DataTypes.STRING,
+ allowNull: true
+ },
+ price: {
+ type: DataTypes.FLOAT,
+ allowNull: false
+ }
 });
-module.exports = Product;
+module.exports = Product
