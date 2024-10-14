@@ -26,4 +26,8 @@ const upload = multer({ storage: storage });
 // กำหนดเส8นทางหรือ url สำหรับเรียกใช8งานแตKละ api
 router.post('/products', upload.single('image'), productController.createProduct);
 router.get('/products', productController.getdata);
+// แก้ไข products
+router.put('/products/:proId', upload.single('image'), productController.updateProduct);
+// ลบ products
+router.delete('/products/:proId', productController.deleteProduct);
 module.exports = router;
