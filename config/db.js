@@ -4,7 +4,7 @@ const { Sequelize } = require('sequelize');
 // dialect: 'postgres',
 // });
 
-const sequelize = new Sequelize('apinodedb', 'postgres', '12345678', {
+const sequelize = new Sequelize('apinode', 'postgres', '12345678', {
    host: 'localhost',
    dialect: 'postgres',
    });
