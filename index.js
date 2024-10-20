@@ -1,7 +1,8 @@
 const express = require('express');
 const sequelize = require('./config/db');
 const routes = require('./routes/productRoutes');
-const routes = require('./routes/index');
+
+
 const app = express();
 app.use(express.json());
 //ระบุตำแหนKง url สำหรับเรียกดูรูปภาพ
@@ -15,3 +16,4 @@ sequelize.sync({force: false}).then(() => {
  console.log(`Server running on port ${PORT}`);
  });
 }).catch(error => console.error(error));
+
