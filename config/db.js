@@ -8,6 +8,7 @@ const sequelize = new Sequelize('apinode', 'postgres', '12345678', {
    host: 'localhost',
    dialect: 'postgres',
    });
+   
    //const sequelize = new Sequelize('camera_db', 'postgres', '12345678', {
    // host: 'localhost',
     //dialect: 'postgres',
