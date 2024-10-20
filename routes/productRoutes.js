@@ -4,6 +4,8 @@ const path = require('path');
 const fs = require('fs');
 
 const productController = require('../controllers/productController');
+const userController = require('../controllers/userController');
+const postController = require('../controllers/postController');
 const router = express.Router();
 //กําหนดโฟลเดอรgสําหรับจัดเก็บไฟลgที่อัพโหลด
 const upload_path = './public/images';
@@ -33,4 +35,21 @@ router.get('/products', productController.getdata);
 router.put('/products/:proId', upload.single('image'), productController.updateProduct);
 // url สําหรับลบข8อมูลสินค8า
 router.delete('/products/:proId', productController.deleteProduct);
+
+// User routes
+router.post('/login', userController.login);
+router.post('/users', userController.createUser);
+router.get('/users', userController.getUsers);
+router.get('/users/:id', userController.getUserById);
+router.put('/users/:id', userController.updateUser);
+router.delete('/users/:id', userController.deleteUser);
+router.post('/login', userController.login);
+// Post routes
+router.post('/users/:userId/posts', postController.createPost);
+router.get('/users/:userId/posts', postController.getUserPosts);
+router.get('/posts', postController.getPosts);
+router.get('/posts/:id', postController.getPostById);
+router.put('/posts/:id', postController.updatePost);
+router.delete('/posts/:id', postController.deletePost);
+
 module.exports = router;
